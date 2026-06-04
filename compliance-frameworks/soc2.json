@@ -1,0 +1,48 @@
+{
+  "framework": "SOC2",
+  "version": "Trust Services Criteria 2017",
+  "controls": [
+    {
+      "id": "CC6.1",
+      "name": "Access Authorization and Logical Access Security",
+      "description": "The entity authorizes, modifies, and removes access to data, software, intellectual property, and other information assets in accordance with established policies and standards.",
+      "criticality": "high",
+      "mitigations": [
+        "Enforce server-side KMS encryption on all data storage layers (S3 buckets, EBS volumes, RDS endpoints).",
+        "Restrict permission boundaries on execution contexts to scoped, non-wildcard patterns.",
+        "Implement IAM role identity assertions restricting principal context permissions."
+      ]
+    },
+    {
+      "id": "CC6.2",
+      "name": "User Registration and Access Management",
+      "description": "The entity registers, authorizes, modifies, and removes users and credentials to securely manage user authentication, restricting compromised administrative contexts.",
+      "criticality": "high",
+      "mitigations": [
+        "Enable automated annual key rotation on AWS Customer Managed Keys (CMKs).",
+        "Enforce multi-factor authentication (MFA) across all identity registry sets."
+      ]
+    },
+    {
+      "id": "CC6.3",
+      "name": "Access Control Point Protections",
+      "description": "The entity restricts physical and logical boundary access and shields corporate data repositories from public, general-purpose web indexing operations or malicious intrusion.",
+      "criticality": "critical",
+      "mitigations": [
+        "Enable AWS S3 Custom Public Access Blocks forcing total access isolation.",
+        "Limit storage configuration buckets strictly to authorized internal roles or VPC gateways.",
+        "Verify public read access blocks are configured consistently."
+      ]
+    },
+    {
+      "id": "CC6.4",
+      "name": "Network Bound and Ingress Protections",
+      "description": "The entity protects the network boundaries, network segmentation, and system integration points using ingress locks and restricted CIDR routers.",
+      "criticality": "critical",
+      "mitigations": [
+        "Eliminate global ingress rules (0.0.0.0/0) directed at administrative port channels (Port 22 SSH, Port 3389 RDP).",
+        "Permit internet ingress strictly through secured reverse proxies, load balancers, or corporate VPN gateways."
+      ]
+    }
+  ]
+}

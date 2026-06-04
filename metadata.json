@@ -1,0 +1,6 @@
+{
+  "name": "AegisGRC",
+  "description": "AI-Powered Policy-as-Code GRC Platform that continuously scans Terraform, evaluates OPA policies, maps constraints to SOC2, and issues automated audit evidence via Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

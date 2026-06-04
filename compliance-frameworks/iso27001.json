@@ -1,0 +1,36 @@
+{
+  "framework": "ISO27001",
+  "version": "ISO/IEC 27001:2022",
+  "controls": [
+    {
+      "id": "A.8.24",
+      "name": "Use of Cryptography",
+      "description": "Rules for the use of cryptography for protection of information shall be defined and implemented.",
+      "criticality": "high",
+      "mitigations": [
+        "Enforce default KMS encryption schemas on AWS S3 logs repositories.",
+        "Implement yearly key rotation on cryptographic key matrices."
+      ]
+    },
+    {
+      "id": "A.5.15",
+      "name": "Access Control",
+      "description": "Rules to control physical and logical access to information and other associated assets shall be established and implemented.",
+      "criticality": "critical",
+      "mitigations": [
+        "Apply S3 Public Block configurations block_public_acls to shut down global leaks.",
+        "Enforce logical identity principles which forbid wildcard '*' role trust scopes."
+      ]
+    },
+    {
+      "id": "A.8.20",
+      "name": "Network Security",
+      "description": "Networks and network devices shall be secured, managed and controlled to protect information.",
+      "criticality": "critical",
+      "mitigations": [
+        "Shield logical administrative service nodes (port 22, 3389) from zero-gateway routing profiles (0.0.0.0/0).",
+        "Enable dedicated state-tracking firewalls to isolate critical assets."
+      ]
+    }
+  ]
+}
