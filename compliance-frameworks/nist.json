@@ -1,0 +1,36 @@
+{
+  "framework": "NIST_CSF",
+  "version": "NIST CSF v2.0",
+  "controls": [
+    {
+      "id": "PR.DS-01",
+      "name": "Data-at-Rest Protection",
+      "description": "Data-at-rest is protected using cryptographic means in compliance with policies, requirements, and risk guidelines.",
+      "criticality": "high",
+      "mitigations": [
+        "Enforce Customer Managed Key encryption layers for long-term production buckets.",
+        "Govern security controls with active audit trackers."
+      ]
+    },
+    {
+      "id": "PR.DS-02",
+      "name": "Data-in-Transit Protection",
+      "description": "Data-in-transit is protected to keep repositories and communications hidden from unsolicited interception.",
+      "criticality": "critical",
+      "mitigations": [
+        "Enable S3 secure transport restrictions forcing HTTPS configurations.",
+        "Block public permissions on data storage buckets to eliminate leak risk."
+      ]
+    },
+    {
+      "id": "PR.IR-01",
+      "name": "Network Ingress Controls and Boundary Defense",
+      "description": "Network boundaries are protected using access control gates and restricted ingress configurations.",
+      "criticality": "critical",
+      "mitigations": [
+        "Reconfigure target firewalls to eliminate 0.0.0.0/0 ingress mapping profiles directly on Port 22/3389.",
+        "Adopt bastion servers or zero-trust connectors."
+      ]
+    }
+  ]
+}

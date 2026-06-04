@@ -1,0 +1,21 @@
+{
+  "frameworks": {
+    "SOC2": {
+      "CC6.1": {
+        "title": "Logical Access Security Boundaries",
+        "description": "Boundary defense procedures to manage logical boundaries and secure endpoints from unauthorized infiltration.",
+        "rego_rules": ["deny_wildcard_ingress", "validate_subnet_access"]
+      },
+      "CC6.3": {
+        "title": "Encryption of Data at Rest",
+        "description": "Organizational and technical metrics verifying static media, backups, databases are encrypted using verified ciphers.",
+        "rego_rules": ["is_unencrypted_s3_bucket", "is_unencrypted_ebs_volume"]
+      },
+      "CC6.4": {
+        "title": "Transmission Integrity Verification",
+        "description": "Protects and monitors transmission of parameters across insecure logical network communication lines.",
+        "rego_rules": ["is_global_ingress_port_22"]
+      }
+    }
+  }
+}
