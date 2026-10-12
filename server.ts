@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 // Lazy initializer for Google Gen AI
 let geminiClient: GoogleGenAI | null = null;
 function getGemini(): GoogleGenAI | null {
+  
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey || apiKey === "MY_GEMINI_API_KEY") {
     // Graceful fallback when API key is not configured in secrets yet
@@ -42,6 +43,7 @@ let quotaExhaustedTimestamp = 0;
 
 function checkQuotaStatus(): boolean {
   if (isQuotaExhaustedGlobal) {
+    
     const elapsed = Date.now() - quotaExhaustedTimestamp;
     // Cooldown of 180 seconds to avoid spamming rate-limited APIs
     if (elapsed < 180 * 1000) {
