@@ -1,4 +1,4 @@
-# 🛡️ Aegis GRC — AI-Powered Policy-as-Code & Drift Healing Compliance Platform
+# 🛡️ Aegis GRC : AI-Powered Policy-as-Code & Drift Healing Compliance Platform
 
 ```text
        _____                       _        _    _ _____   ______ 
